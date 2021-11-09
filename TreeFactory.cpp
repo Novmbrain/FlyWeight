@@ -32,10 +32,10 @@ TreeType TreeFactory::getTreeType(std::string name, std::string color, std::stri
     string key = getKey(treeType);
 
     if(this->treeTypeMap.find(key) == this->treeTypeMap.end()) {
-        cout << "TreeFactory: can't find this treeType, creating new one" << endl;
+//        cout << "TreeFactory: can't find this treeType, creating new one" << endl;
         this->treeTypeMap.insert(std::map<std::string, TreeType>::value_type(key, treeType));
     } else {
-        cout << "TreeFactory : Reusing existring treeType" << endl;
+//        cout << "TreeFactory : Reusing existring treeType" << endl;
     }
 
     return this->treeTypeMap.at(key);

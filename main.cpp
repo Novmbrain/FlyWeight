@@ -4,6 +4,7 @@
 #include "TreeType.h"
 #include "TreeFactory.h"
 #include "Forest.h"
+
 using namespace std;
 
 int main() {
@@ -19,18 +20,21 @@ int main() {
 //    cout << treeFactory.getTreeType("a","b","c") << endl;
 //TreeFactory treeFactory();
 
-    Forest forest;
-//    forest.plantTree(1,2,"a","b","c");
-//    forest.plantTree(1,2,"a","e","c");
-    forest.plantWholeTree(1,2,"a","b","c");
-    forest.plantWholeTree(1,2,"a","b","c");
-    forest.plantWholeTree(1,2,"a","b","c");
-    forest.plantWholeTree(1,2,"a","b","c");
+    string color[5] = {"red", "blue", "yellow", "green", "black"};
+    string texture[5] = {"texture1", "texture2", "texture3", "texture4", "texture5"};
+    string name[5] = {"Apple Tree", "Pear Tree", "Peach Tree", "Banyan Tree", "Banyan Tree"};
 
-    forest.drawTreeComplet();
+// test 1
+    Forest forest1;
+    for (int i = 0; i < 100000; ++i) {
+        forest1.plantTree(rand(), rand(), name[rand() % 5], color[rand() % 5], texture[rand() % 5]);
+    }
 
-
-
+    //test 2
+    Forest forest2;
+    for (int i = 0; i < 100000; ++i) {
+        forest1.plantWholeTree(rand(), rand(), name[rand() % 5], color[rand() % 5], texture[rand() % 5]);
+    }
 
     return 0;
 }
