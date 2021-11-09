@@ -12,18 +12,25 @@ int main() {
 //
 //    TreeType type3("h","i", "j");
 //
-//    TreeFactory treeFactory{type1,type2, type3};
-//
+//    TreeFactory treeFactory{type1,type2, type3};//
 //    treeFactory.listAllTreeType();
 //    cout << treeFactory.getTreeType("k","l","m") << endl;
 //    treeFactory.listAllTreeType();
 //    cout << treeFactory.getTreeType("a","b","c") << endl;
-
 //TreeFactory treeFactory();
 
     Forest forest;
-    forest.plantTree(1,2,"a","b","c");
-    forest.plantTree(1,2,"a","e","c");
+//    forest.plantTree(1,2,"a","b","c");
+//    forest.plantTree(1,2,"a","e","c");
+    forest.plantWholeTree(1,2,"a","b","c");
+    forest.plantWholeTree(1,2,"a","b","c");
+    forest.plantWholeTree(1,2,"a","b","c");
+    forest.plantWholeTree(1,2,"a","b","c");
+
+    forest.drawTreeComplet();
+
+
+
 
     return 0;
 }
