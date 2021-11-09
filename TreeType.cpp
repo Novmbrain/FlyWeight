@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 void TreeType::draw(int x, int y) {
     cout<<"a tree in x: "<< x << " y: " << y << endl;
 }

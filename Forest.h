@@ -16,15 +16,11 @@ private:
     std:: vector<TreeComplet> treesComplet;
     TreeFactory treeFactory;
 
-
-
 public:
     Forest();
     void plantTree(int x, int y, std::string name, std::string color, std::string texture);
     void plantWholeTree(int x, int y, std::string name, std::string color, std::string texture);
-
     void draw();
-
     void drawTreeComplet();
 };
 

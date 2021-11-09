@@ -11,13 +11,6 @@ std::string TreeFactory::getKey(const string name, const string color, const str
     return name + "_" + color + "-" + texture;
 }
 
-//TreeFactory::TreeFactory(std::initializer_list<TreeType> tree_types) {
-//    for(TreeType treeType : tree_types){
-//        this->treeTypeMap.insert(std::map<std::string, TreeType>::value_type(this->getKey(treeType), treeType));
-//    }
-//
-//}
-
 void TreeFactory::listAllTreeType() const {
     size_t count = this->treeTypeMap.size();
     std::cout << "\nTreeFactory: I have " << count << " treeType:\n";

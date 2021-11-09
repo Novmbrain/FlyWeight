@@ -10,11 +10,9 @@
 class TreeType {
 
 public:
-
     std::string name;
     std::string color;
     std::string texture;
-
 
     TreeType(const std::string &name, const std::string &color, const std::string &texture);
 

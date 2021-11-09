@@ -16,7 +16,6 @@ public:
     TreeType treeType;
     Tree(int x, int y, const TreeType &treeType);
     void draw();
-
     friend std::ostream &operator<<(std::ostream &os, const Tree &tree);
 };
 

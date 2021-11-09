@@ -8,32 +8,21 @@
 using namespace std;
 
 int main() {
-//    TreeType type1("a","b", "c");
-//    TreeType type2("e","f", "g");
-//
-//    TreeType type3("h","i", "j");
-//
-//    TreeFactory treeFactory{type1,type2, type3};//
-//    treeFactory.listAllTreeType();
-//    cout << treeFactory.getTreeType("k","l","m") << endl;
-//    treeFactory.listAllTreeType();
-//    cout << treeFactory.getTreeType("a","b","c") << endl;
-//TreeFactory treeFactory();
-
+    //Initialisation, totally there exist 3 * 3 * 3 = 27 types of tree
     string color[3] = {"red", "blue", "yellow"};
     string texture[3] = {"texture1", "texture2", "texture3"};
     string name[3] = {"Apple Tree", "Pear Tree", "Peach Tree"};
-    //test 1
+
+    //forest using FlyWeight
     Forest forest1;
-    for (int i = 0; i < 1000000; ++i) {
+    for (int i = 0; i < 100'000'00; ++i) {
         forest1.plantTree(rand(), rand(), name[rand() % 3], color[rand() % 3], texture[rand() % 3]);
     }
 
-    //test 2
+//    forest without FlyWeight
     Forest forest2;
-    for (int i = 0; i < 1000000; ++i) {
+    for (int i = 0; i < 100'000'0; ++i) {
         forest2.plantWholeTree(rand(), rand(), name[rand() % 3], color[rand() % 3], texture[rand() % 3]);
     }
-
     return 0;
 }
