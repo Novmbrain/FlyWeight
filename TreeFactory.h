@@ -12,14 +12,14 @@
 class TreeFactory {
 private:
     std::map<std::string, TreeType> treeTypeMap;
-    std::string getKey(const TreeType &treeType) const;
+    std::string getKey(std::string name, std::string color, std::string texture) const;
 
 public:
 
     TreeFactory(std::initializer_list<TreeType> tree_types);
     TreeFactory();
 
-    TreeType getTreeType(std::string name, std::string color, std::string texture);
+    TreeType& getTreeType(std::string name, std::string color, std::string texture);
     void listAllTreeType() const;
 
 

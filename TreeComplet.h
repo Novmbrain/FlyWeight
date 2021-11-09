@@ -16,7 +16,7 @@ public:
     std::string name;
     std::string color;
     std::string texture;
-    char bigData[100];
+    char bigData[10000];
 
     TreeComplet(int x, int y, const std::string &name, const std::string &color, const std::string &texture);
 

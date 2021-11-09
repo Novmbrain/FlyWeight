@@ -9,7 +9,7 @@
 using namespace std;
 
 void Forest::plantTree(int x, int y, std::string name, std::string color, std::string texture) {
-    TreeType treeType = treeFactory.getTreeType(name, color, texture);
+    TreeType& treeType = treeFactory.getTreeType(name, color, texture);
     Tree tree(x, y, treeType);
     treesFlyWeight.push_back(tree);
 }

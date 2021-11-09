@@ -19,6 +19,7 @@ ostream &operator<<(ostream &os, const TreeType &type) {
 
 TreeType::TreeType(const string &name, const string &color, const string &texture) : name(name), color(color),
                                                                                      texture(texture) {
+
 }
 
 

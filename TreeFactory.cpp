@@ -7,16 +7,16 @@
 
 using namespace std;
 
-std::string TreeFactory::getKey(const TreeType &treeType) const {
-    return treeType.name + "_" + treeType.color + "-" + treeType.texture;
+std::string TreeFactory::getKey(const string name, const string color, const string texture) const {
+    return name + "_" + color + "-" + texture;
 }
 
-TreeFactory::TreeFactory(std::initializer_list<TreeType> tree_types) {
-    for(TreeType treeType : tree_types){
-        this->treeTypeMap.insert(std::map<std::string, TreeType>::value_type(this->getKey(treeType), treeType));
-    }
-
-}
+//TreeFactory::TreeFactory(std::initializer_list<TreeType> tree_types) {
+//    for(TreeType treeType : tree_types){
+//        this->treeTypeMap.insert(std::map<std::string, TreeType>::value_type(this->getKey(treeType), treeType));
+//    }
+//
+//}
 
 void TreeFactory::listAllTreeType() const {
     size_t count = this->treeTypeMap.size();
@@ -27,15 +27,16 @@ void TreeFactory::listAllTreeType() const {
     }
 }
 
-TreeType TreeFactory::getTreeType(std::string name, std::string color, std::string texture) {
-    TreeType treeType(name, color, texture);
-    string key = getKey(treeType);
+TreeType& TreeFactory::getTreeType(std::string name, std::string color, std::string texture) {
+
+    string key = getKey(name, color, texture);
 
     if(this->treeTypeMap.find(key) == this->treeTypeMap.end()) {
 //        cout << "TreeFactory: can't find this treeType, creating new one" << endl;
+        TreeType treeType(name, color, texture);
         this->treeTypeMap.insert(std::map<std::string, TreeType>::value_type(key, treeType));
     } else {
-//        cout << "TreeFactory : Reusing existring treeType" << endl;
+//        cout << "TreeFactory : Reusing existing treeType" << endl;
     }
 
     return this->treeTypeMap.at(key);
